@@ -16,7 +16,7 @@ export class ImagenPipe implements PipeTransform {
     } else {
         imgUrl = './assets/no-image-banner.jpg';
     }
-    console.log('imgURL', imgUrl);
+    // console.log('imgURL', imgUrl);
 
     return imgUrl;
   }

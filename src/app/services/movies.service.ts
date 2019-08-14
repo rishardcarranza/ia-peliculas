@@ -12,6 +12,8 @@ const apiKey = environment.apiKey;
 })
 export class MoviesService {
 
+    private popularesPage = 0;
+
   constructor(private http: HttpClient) { }
 
 
@@ -23,7 +25,6 @@ export class MoviesService {
   }
 
   getFeature() {
-
     const hoy = new Date();
     const ultimoDia = new Date(hoy.getFullYear(), hoy.getMonth() + 1, 0).getDate();
     const mes = hoy.getMonth() + 1;
@@ -36,5 +37,12 @@ export class MoviesService {
 
       // tslint:disable-next-line: max-line-length
     return this.ejecutarQuery<MovieResult>(`/discover/movie?primary_release_date.gte=${inicio}&primary_release_date.lte=${final}`);
+  }
+
+  getPopulars() {
+      this.popularesPage++;
+      const query = `/discover/movie?sort_by=popularity.desc&page=${this.popularesPage}`;
+
+      return this.ejecutarQuery<MovieResult>(query);
   }
 }
