@@ -20,8 +20,8 @@ export class DataLocalService {
     let existe = false;
     let message = '';
 
-    for (const pelicula of this.peliculas) {
-        if (pelicula.id === pelicula.id) {
+    for (const peli of this.peliculas) {
+        if (peli.id === pelicula.id) {
             existe = true;
             break;
         }
