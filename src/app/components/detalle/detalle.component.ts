@@ -3,6 +3,7 @@ import { MoviesService } from '../../services/movies.service';
 import { MovieDetail, Cast } from '../../interfaces/interfaces';
 import { ModalController } from '@ionic/angular';
 import { DataLocalService } from '../../services/data-local.service';
+import { Tab3Page } from '../../tab3/tab3.page';
 
 @Component({
   selector: 'app-detalle',

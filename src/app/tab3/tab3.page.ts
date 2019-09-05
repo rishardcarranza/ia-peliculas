@@ -25,11 +25,7 @@ export class Tab3Page implements OnInit {
    * ionViewWillEnter: Se ejecuta antes de que se muestre en pantalla la pagina
    */
   async ionViewWillEnter() {
-    this.peliculas = await this.dataLocal.loadFavorites();
-    this.generos = await this.movieService.cargarGeneros();
-
-    // console.log(this.peliculas);
-    this.peliculasPorGenero(this.generos, this.peliculas);
+    this.loadFavoritos(event);
   }
 
   peliculasPorGenero(generos: Genre[], peliculas: MovieDetail[]) {
@@ -46,6 +42,15 @@ export class Tab3Page implements OnInit {
     });
 
     console.log(this.favoritoPorGenero);
+  }
+
+  async loadFavoritos(event) {
+      console.log(event);
+    this.peliculas = await this.dataLocal.loadFavorites();
+    this.generos = await this.movieService.cargarGeneros();
+
+    // console.log(this.peliculas);
+    this.peliculasPorGenero(this.generos, this.peliculas);
   }
 
 }

@@ -15,7 +15,7 @@
                     <h4>{{favorito.genero}}</h4>
                 </ion-col>
             </ion-row>
-            <app-slideshow-poster [peliculas]="favorito.peliculas"></app-slideshow-poster>
+            <app-slideshow-poster [peliculas]="favorito.peliculas" (onModalDismiss)="loadFavoritos($event)"></app-slideshow-poster>
         </ion-grid>
 
     </div>
