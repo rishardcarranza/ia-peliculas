@@ -64,6 +64,7 @@ export class MoviesService {
 
         this.ejecutarQuery(`/genre/movie/list?a=1`)
         .subscribe(resp => {
+            // tslint:disable-next-line: no-string-literal
             this.generos = resp['genres'];
             // console.log(this.generos);
 
