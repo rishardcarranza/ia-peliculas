@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovieResult, MovieDetail, Credits, Genre } from '../interfaces/interfaces';
 import { environment } from '../../environments/environment';
-import { resolve } from 'dns';
 
 const URL = environment.url;
 const apiKey = environment.apiKey;
